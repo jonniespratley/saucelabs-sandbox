@@ -1,0 +1,52 @@
+###
+
+# curl --location --request GET 'https://webexapis.com/v1/messages?roomId=Y2lzY29zcGFyazovL3VzL1JPT00vYTA2M2E3YzAtMjIwMS0xMWVjLTliNTAtOWI5MzU1Njk3MGIw'
+#--header 'Authorization: Bearer MmI0ZGY0ZWYtY2M2Mi00Y2Q4LThiMzAtMmQzZjExZDI5MzQzZjBlMTU0YzktNzhi_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f'
+GET {{URL}}/messages?roomId={{ROOM_ID}}
+Authorization: Bearer {{ACCESS_TOKEN}}
+
+###
+# Create message with 2 cards
+POST {{URL}}/messages
+Authorization: Bearer {{ACCESS_TOKEN}}
+Content-Type: application/json
+
+{
+  "roomId": "{{ROOM_ID}}",
+  "markdown": "Multi Cards in Message ",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.2",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "Simple Card 1",
+            "wrap": true
+          }
+        ]
+      }
+    },
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.2",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "Simple Card 2",
+            "wrap": true
+          }
+        ]
+      }
+    }
+  ]
+}
+
+###
+
