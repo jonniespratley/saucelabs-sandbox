@@ -8,11 +8,6 @@ module.exports = function (config) {
         SAUCE_ACCESS_KEY
     } = process.env;
 
-    if (SAUCE === 'true' && !SAUCE_USERNAME || !SAUCE_ACCESS_KEY) {
-        console.log('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.')
-        process.exit(1)
-    }
-
     const firefoxOptions = {
         prefs: {
             'devtools.chrome.enabled': true,
