@@ -6,9 +6,9 @@ const useSauceConnect = process.env.SAUCE === 'true';
 const timeout = process.env.TEST_TIMEOUT || 60000;
 let browsers = null;
 
-const appName = 'sandbox-web-test-runner';
+const appName = 'saucelabs-sandbox';
 const environment = process.env.environment || 'dev';
-const buildNumber = process.env.BUILD_NUMBER || new Date().toLocaleString();
+const buildNumber = process.env.BUILD_NUMBER || 0;
 const buildName = `${appName}-tests-${environment}#${buildNumber}`;
 
 if (useSauceConnect) {
@@ -162,7 +162,7 @@ export default {
   concurrency: 1,
   concurrentBrowsers: 1,
   files: [
-    'src/**/*.test.js',
+    'src/**/*-test-es6.js',
   ],
   plugins: [
     esbuildPlugin({

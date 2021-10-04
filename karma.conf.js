@@ -95,13 +95,13 @@ module.exports = function (config) {
         files: [
 
             'public/*.html',
-            'src/**/*.js',
+            'src/**/*.test.js',
           //  {pattern: 'public/**/*.html', served: true }
            // 'src/**/*.test.js'
         ],
 
         // list of files / patterns to exclude
-        exclude: [],
+        exclude: ['*.es6.js'],
 
 
         // preprocess matching files before serving them to the browser
@@ -147,7 +147,7 @@ module.exports = function (config) {
         concurrency: Infinity,
 
         sauceLabs: {
-          testName: 'Sandbox - Karma and Sauce Labs demo',
+          build: 'Sandbox - Karma and Sauce Labs demo',
           recordScreenshots: false,
           connectOptions: {
             logfile: 'sauce_connect.log'
