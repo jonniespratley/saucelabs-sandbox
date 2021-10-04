@@ -9,11 +9,11 @@ let browsers = null;
 const appName = 'saucelabs-sandbox';
 const environment = process.env.environment || 'dev';
 const buildNumber = process.env.BUILD_NUMBER || 0;
-const buildName = `${appName}-tests-${environment}#${buildNumber}`;
+const buildName = `${appName}-wtr`;
 
 if (useSauceConnect) {
   const sauceLabsOptions = {
-    name: buildName,
+    build: buildName,
     build: buildNumber,
     recordVideo: true,
     recordScreenshots: false,
@@ -95,6 +95,13 @@ if (useSauceConnect) {
       'sauce:options':{
         tags: ['w3c-chrome']
       }
+    }),
+    sauceLabsLauncher({
+      browserName: 'chrome',
+      version: 'latest',
+      platformName: 'Windows 10',
+      'goog:chromeOptions': chromeOptions,
+      tags: ['jsonwp-chrome'],
     }),
     sauceLabsLauncher({
       browserName: 'firefox',
