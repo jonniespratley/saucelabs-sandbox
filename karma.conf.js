@@ -112,7 +112,7 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'saucelabs'],
 
 
         // web server port
@@ -144,6 +144,15 @@ module.exports = function (config) {
 
         // Concurrency level
         // how many browser instances should be started simultaneously
-        concurrency: Infinity
+        concurrency: Infinity,
+
+        sauceLabs: {
+          testName: 'Sandbox - Karma and Sauce Labs demo',
+          recordScreenshots: false,
+          connectOptions: {
+            logfile: 'sauce_connect.log'
+          },
+          public: 'public'
+        },
     })
 }
