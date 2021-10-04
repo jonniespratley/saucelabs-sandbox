@@ -20,10 +20,10 @@ $ yarn test:karma:sauce
 
 3. Run locally with `wtr`
 ```
-$ yarn test:web
+$ yarn test:wtr
 ```
 
 4. Run on saucelabs with `wtr`
 ```
-$ yarn test:web
+$ yarn test:wtr:sauce
 ```

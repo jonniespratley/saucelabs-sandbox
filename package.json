@@ -6,8 +6,8 @@
   "scripts": {
     "test": "karma start",
     "test:karma:sauce": "SAUCE=true karma start",
-    "test:web": "wtr --coverage --group default",
-    "test:web:sauce": "SAUCE=true wtr",
+    "test:wtr": "wtr --coverage --group default",
+    "test:wtr:sauce": "SAUCE=true wtr",
     "serve:https": "serve --ssl-cert ./cert.pem --ssl-key ./key.pem ./public",
     "serve": "serve ./public"
   },
